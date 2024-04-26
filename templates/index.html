@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cupcakes</title>
+</head>
+<body>
+    <h1>Cupcakes</h1>
+    
+    <ul id="cupcake-list">
+        <!-- display cupcakes here -->
+    </ul>
+    
+    <h2>Add a cupcake</h2>
+    
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        {% for field in form if field.widget.input_type != 'hidden' %}
+            <p>
+                {{field.label}}
+                {{field(id=field.id)}}
+            </p>
+        {% endfor %}
+        <button type="submit">Submit</button>
+    </form>
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/axios/dist/axios.js"></script>
+    <script src="/static/app.js"></script>
+
+</body>
+</html>
